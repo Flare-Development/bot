@@ -9,19 +9,40 @@
           background-color:rgb(143, 139, 139);
           border-radius: 15px;
           border-width: 1px;
-          bottom:50%;
-          position: absolute;
-         
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           border-style: solid;
+      }
+      #foot {
+          position:fixed;
+          bottom:1px;
+          left:50%;
+          transform: translate(-50%, -50%);
+      }
+      #redCallout {
+          background-color: rgba(253, 124, 124, 0.842);
+          border-style: solid;
+          border-width: 4px;
+          border-color:white;
+          width: 70%;
       }
   </style>
 </head>
 
 <body>
- <center>
+
     <div id="infoBoard">
-      <p>t</p>
+    <center>
+        <p>&nbsp</p>
+       <div id="redCallout">
+
+       </div>
+
+
+    </center>
 
     </div>
- </center>
+   <p id="foot">&copy; Copyright 2021 Notation Systems Incorporated</p>
 </body>
