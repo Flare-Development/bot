@@ -1,4 +1,5 @@
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
       /*
          Copyright 2021 Notation Systems Incorporated
@@ -22,11 +23,21 @@
           transform: translate(-50%, -50%);
       }
       #redCallout {
-          background-color: rgba(253, 124, 124, 0.842);
+          background-color: #FD7C6D;
           border-style: solid;
           border-width: 4px;
           border-color:white;
           width: 70%;
+          color:white;
+      }
+      #blueCallout {
+          background-color: #066aff;
+          border-style: solid;
+          border-width: 4px;
+          border-color:white;
+          width: 70%;
+          
+          color:white;
       }
   </style>
 </head>
@@ -37,12 +48,30 @@
     <center>
         <p>&nbsp</p>
        <div id="redCallout">
-
+<h1>503 - Service Unavailble</h1>
+<p>This page cannot be loaded.</p>
+<p id="debug">x</p>
        </div>
-
+       <p>&nbsp</p>
+     <div id="blueCallout">
+       <h2>Fallback links</h2>
+       <p></p>
+       <ul>
+           <li><a href="/invite">Invite Bot</a></li>
+           <li><a href="/commands">Bot Commands</a></li>
+       </ul>
+     </div>
 
     </center>
 
     </div>
    <p id="foot">&copy; Copyright 2021 Notation Systems Incorporated</p>
 </body>
+<script>
+       var debug = document.getElementById("debug")
+    fetch('http://ip-api.com/json/')
+  .then(response => response.json())
+  .then(data => debug.innerHTML = data.query + " - " + data.isp);
+
+
+</script>
